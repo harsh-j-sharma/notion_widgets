@@ -65,12 +65,27 @@
             text-align: center;
             color: #777;
         }
+
+        .profile-picture img {
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+
+        .cta-button {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .clock {
+            font-size: 100px;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Your Name</h1>
         <p>Welcome to my Landing Page</p>
+        <div id="clock"></div>
     </header>
 
     <section>
@@ -86,4 +101,18 @@
         &copy; 2023 Your Name. All rights reserved.
     </footer>
 </body>
+<script>
+const clock = document.getElementById("clock");
+
+const updateClock = () => {
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+
+    clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+};
+
+setInterval(updateClock, 1000);
+</script>
 </html>
